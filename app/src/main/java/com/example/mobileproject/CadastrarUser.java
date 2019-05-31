@@ -37,6 +37,6 @@ public class CadastrarUser extends AppCompatActivity {
     public void cadastraClick(View v) {
         bd.addCliente(new Cliente(txtLogin.getText().toString(), txtSenha.getText().toString()));
         Toast.makeText(getBaseContext(), "Salvo com sucesso", Toast.LENGTH_LONG).show();
-        setContentView(R.layout.activity_main);
+        startActivity(new Intent(this, MainActivity.class);
     }
 }

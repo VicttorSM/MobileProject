@@ -35,25 +35,6 @@ public class PcsActivity extends AppCompatActivity {
         textQtde = (TextView) findViewById(R.id.textQtde);
         textTotal = (TextView) findViewById(R.id.textTotal);
 
-        btnComprar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String url = "https://www.kabum.com.br";
-                Intent browser = new Intent(Intent.ACTION_VIEW);
-                browser.setData(Uri.parse(url));
-                startActivity(browser);
-            }
-        });
-
-        btnMouse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                qtde += 1;
-                total += 30.00;
-                setTotais();
-            }
-        });
-
         btnTeclado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,6 +53,19 @@ public class PcsActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void onClickComprar() {
+        String url = "https://www.kabum.com.br";
+        Intent browser = new Intent(Intent.ACTION_VIEW);
+        browser.setData(Uri.parse(url));
+        startActivity(browser);
+    }
+
+    public void onClickMouse() {
+        qtde += 1;
+        total += 30.00;
+    }
+
 
     private void setTotais()
     {
